@@ -63,3 +63,5 @@ crashlytics-build.properties
 # ------------------------------------ #
 .mayaSwatches/
 Assets/Prototype/Prefabs/RightHand.prefab
+
+.vscode
