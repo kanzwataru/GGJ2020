@@ -76,14 +76,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1c9f42dfbe8a26583a4862a6340d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1
+  maxSpeed: 15
   accel: 0.5
   decel: 0.25
-  jumpSpeed: 2
+  jumpSpeed: 10
   jumpAccel: 0.95
   jumpDecel: 0.25
   jumpTimerLength: 0.15
-  gravity: 0.9
+  gravity: 5
   stopDist: 0.1
 --- !u!1 &6569762632157391440
 GameObject:
