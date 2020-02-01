@@ -331,11 +331,11 @@ MonoBehaviour:
   maxSpeed: 5
   accel: 0.75
   decel: 0.1
-  jumpSpeed: 15
+  jumpSpeed: 20
   jumpAccel: 0.95
-  jumpDecel: 0.25
-  jumpTimerLength: 0.15
-  gravity: 10
+  jumpDecel: 0.05
+  jumpTimerLength: 0.1
+  gravity: 8
   stopDist: 0.05
 --- !u!1 &340631948
 GameObject:
