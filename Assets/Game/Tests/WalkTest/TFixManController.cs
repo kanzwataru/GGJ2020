@@ -28,49 +28,73 @@ public class TFixManController : MonoBehaviour
 
         //var dir = parentRoom.TransformDirection(input);
         var dir = input;
-        var velocity = dir * speed * Time.deltaTime;
+        var velocity = dir * speed * Time.deltaTime;       
 
-        if(transform.position.z != 0) {
-            velocity.z = (0 - transform.position.z) * 0.05f;
-        }
+        velocity = ClampRaycastCollision(velocity);
 
-        //var comp = GetComponent<CharacterController>();
-        //comp.Move(velocity);
-        /*
-        var pos = transform.position;
-        transform.position = pos + velocity;
-        */
+        var pos = transform.localPosition;
+        transform.localPosition = pos + velocity;
+    }
 
+    Vector3 ClampRaycastCollision(Vector3 velocity)
+    {
         float castDist = 2.0f;
+        var castPos = transform.position;
+        var nextCastPos = transform.position + transform.TransformDirection(velocity);
 
-        Debug.DrawRay(transform.position, transform.TransformDirection(new Vector3(castDist, 0, 0)));
-        Debug.DrawRay(transform.position, transform.TransformDirection(new Vector3(-castDist, 0, 0)));
+        Debug.DrawRay(castPos, transform.TransformDirection(new Vector3(castDist, 0, 0)));
+        Debug.DrawRay(castPos, transform.TransformDirection(new Vector3(-castDist, 0, 0)));
 
         RaycastHit hitInfo;
-        if(Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(1, 0, 0)), out hitInfo, castDist)) {
-            Debug.Log("see right");
+        if(Physics.Raycast(castPos, transform.TransformDirection(new Vector3(1, 0, 0)), out hitInfo, castDist)) {
+            //Debug.Log("see right");
             if(hitInfo.distance < colliderRadius) {
                 velocity.x = -((colliderRadius + stopDist) - hitInfo.distance);
-                Debug.Log("penetrating right");
+                //Debug.Log("penetrating right");
             }
             else if(hitInfo.distance < colliderRadius + stopDist) {
                 velocity.x = Mathf.Min(velocity.x, 0);
             }
+            else {
+                RaycastHit nextHitInfo;
+                if(Physics.Raycast(nextCastPos, transform.TransformDirection(new Vector3(1, 0, 0)), out nextHitInfo, castDist)) {
+                    if(nextHitInfo.distance < colliderRadius) {
+                        velocity.x = Mathf.Min(velocity.x, 0);
+                        //Debug.Log("will have penetrated right");
+                    }
+                }
+                else {
+                    //Debug.Log("will have gone through right");
+                    velocity.x = Mathf.Min(velocity.x, 0);
+                }
+            }
         }
 
-        if(Physics.Raycast(transform.position, transform.TransformDirection(new Vector3(-1, 0, 0)), out hitInfo, castDist)) {
-            Debug.Log("see left");
+        if(Physics.Raycast(castPos, transform.TransformDirection(new Vector3(-1, 0, 0)), out hitInfo, castDist)) {
+            //Debug.Log("see left");
             if(hitInfo.distance < colliderRadius) {
                 velocity.x = ((colliderRadius + stopDist) - hitInfo.distance);
-                Debug.Log("penetrating left");
+                //Debug.Log("penetrating left");
             }
             else if(hitInfo.distance < colliderRadius + stopDist) {
                 velocity.x = Mathf.Max(velocity.x, 0);
             }
+            else {
+                RaycastHit nextHitInfo;
+                if(Physics.Raycast(nextCastPos, transform.TransformDirection(new Vector3(-1, 0, 0)), out nextHitInfo, castDist)) {
+                    if(nextHitInfo.distance < colliderRadius) {
+                        velocity.x = Mathf.Max(velocity.x, 0);
+                        //Debug.Log("will have penetrated right");
+                    }
+                }
+                else {
+                    //Debug.Log("will have gone through right");
+                    velocity.x = Mathf.Max(velocity.x, 0);
+                }
+            }
         }
 
-        var pos = transform.localPosition;
-        transform.localPosition = pos + velocity;
+        return velocity;
     }
 
     void OnCollisionStay(Collision collision)
