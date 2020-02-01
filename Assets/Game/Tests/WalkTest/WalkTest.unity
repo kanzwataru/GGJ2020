@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 306635429}
   - component: {fileID: 306635427}
   - component: {fileID: 306635431}
+  - component: {fileID: 306635432}
   - component: {fileID: 306635430}
   m_Layer: 0
   m_Name: Fixman
@@ -255,7 +256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306635426}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.02, z: -1.0155193}
+  m_LocalPosition: {x: -0, y: -0.626, z: -1.0155193}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 340631953}
@@ -285,13 +286,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306635426}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fed6eb3afc5c3f2378f8e982a795d0cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
   stopDist: 0.1
+  jumpTimerLength: 0.03
+  jumpSpeed: 50
+  fallSpeed: 20
+  gravity: 20
   parentRoom: {fileID: 1534599374}
 --- !u!143 &306635431
 CharacterController:
@@ -311,6 +316,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!114 &306635432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306635426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cde8ddea37bdcb8bba5c161ab5d85528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 5
+  accel: 0.75
+  decel: 0.1
+  jumpSpeed: 15
+  jumpAccel: 0.95
+  jumpDecel: 0.25
+  jumpTimerLength: 0.15
+  gravity: 10
+  stopDist: 0.05
 --- !u!1 &340631948
 GameObject:
   m_ObjectHideFlags: 0
