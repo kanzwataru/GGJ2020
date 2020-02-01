@@ -9,7 +9,7 @@ using System.Collections;
 
 public class JumpTest : MonoBehaviour
 {
-   
+    public AnimationCurve animCurve;
 
     public float speed = 6.0f;
     public float jumpSpeed = 8.0f;
@@ -22,6 +22,8 @@ public class JumpTest : MonoBehaviour
 
     public bool isJumping = false;
     public bool isGrounded;
+
+    public float graphValue;
 
 
     void Update()
@@ -52,12 +54,7 @@ public class JumpTest : MonoBehaviour
             rb.constraints &= ~RigidbodyConstraints.FreezePosition;
         }
 
-        
-
-
-
-            
-        
+        graphValue = animCurve.Evaluate(Time.time);
 
        
         
@@ -71,10 +68,6 @@ public class JumpTest : MonoBehaviour
             isJumping = false;
         }
     }
-
-
-
-
 
 
 
