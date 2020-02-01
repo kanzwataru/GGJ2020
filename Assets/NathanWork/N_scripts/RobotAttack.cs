@@ -5,13 +5,12 @@ using UnityEngine;
 public class RobotAttack : MonoBehaviour
 {
     //Punch
-    //Kick
     //Missiles
     //Targeting
-    public Animator robotAnimator;
     public int punchDamage = 3;
-    public int kickDamage = 2;
     public bool isPlayerOne = true;
+
+    public Animator robotAnimator;
 
     void Start()
     {
