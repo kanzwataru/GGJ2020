@@ -2,91 +2,94 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TFixManController : MonoBehaviour
+public class TNewMotor : MonoBehaviour
 {
-    public float speed = 10.0f;
-    public float stopDist = 0.05f;
-    public float jumpTimerLength = 1.0f;
-    public float jumpSpeed = 15.0f;
-    public float fallSpeed = 1.5f;
-    public float gravity = 2.0f;
+    public float maxSpeed = 1;
+    public float accel = 0.5f;
+    public float decel = 0.25f;
+    public float jumpSpeed = 2;
+    public float jumpAccel = 0.95f;
+    public float jumpDecel = 0.25f;
+    public float jumpTimerLength = 0.15f;
+    public float gravity = 0.9f;
+    public float stopDist = 0.1f;
 
-    public Transform parentRoom;
+    Vector3 dir = Vector3.zero;
+    Vector3 inertia = Vector3.zero;
 
-    float jumpTimer = 0.0f;
+    float jumpTimer;
     bool jumpDone = false;
-    Vector3 inertia;
-
 
     float colliderRadius;
 
     // Start is called before the first frame update
     void Start()
     {
+        jumpTimer = jumpTimerLength;
         colliderRadius = GetComponent<CapsuleCollider>().radius;
     }
 
-    float JumpForce(float inputForce)
-    {
-        float force = 0.0f;
-        bool jump = inputForce > 0;
+    float CalcInertia(float current, float dir, float accel, float decel) {
+        if(dir != 0)
+            return Mathf.Clamp(current + (accel * dir), -1.0f, 1.0f);
+        else
+            return Mathf.Clamp(Mathf.Abs(current) - decel, 0, 1.0f) * Mathf.Sign(current);
+    }
 
-        if(!jump) {
-            jumpDone = false;
-        }
+    float CalcGravity(float current, float dir, float accel, float decel) {
+        if(dir > 0)
+            return Mathf.Clamp(current + (accel * dir), 0.0f, 1.0f);
+        else
+            return Mathf.Clamp(current - decel, -1.0f, 0.0f);
+    }
 
-        if(jumpTimer < jumpTimerLength) {
-            if(jump && !jumpDone && inertia.y >= 0) {
+    float CalcJump(float input) {
+        float force = 0;
+
+        if(input > 0) {
+            if(jumpTimer < jumpTimerLength) {
                 jumpTimer += Time.deltaTime;
-                force = jumpSpeed;
-            }
-            else {
-                jumpTimer = 0;
-                force = 0;
+                force = 1;
             }
         }
         else {
-            jumpTimer = 0;
-            jumpDone = true;
+            if(inertia.y == 0) {
+                jumpTimer = 0;
+            }
+            force = 0;
         }
 
         return force;
     }
 
-    Vector3 CalcInertia(Vector3 inertia, Vector3 impulse, float gravity)
-    {
-        inertia.y -= gravity * Time.deltaTime;
-        inertia.y = Mathf.Max(inertia.y, -fallSpeed);
-        
-        inertia.x = Mathf.Lerp(inertia.x, 0, 0.1f * Time.deltaTime);
-        inertia += impulse * Time.deltaTime;
-
-        return inertia;
-    }
-
+    // Update is called once per frame
     void FixedUpdate()
     {
-        var input = new Vector3(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical"),
-            0.0f
+        inertia.x = CalcInertia(inertia.x, dir.x, accel, decel);
+        inertia.y = CalcGravity(inertia.y, CalcJump(dir.y), jumpAccel, jumpDecel);
+
+        float verticalSpeed = (inertia.y > 0) ? jumpSpeed : gravity;
+
+        var moveDelta = new Vector3(
+            inertia.x * (maxSpeed * Time.deltaTime),
+            inertia.y * (verticalSpeed * Time.deltaTime),
+            0
         );
 
-        var impulse = new Vector3(
-            input.x * speed,
-            JumpForce(input.y),
-            0.0f
-        );
-
-        //var dir = parentRoom.TransformDirection(input);
-        inertia = CalcInertia(inertia, impulse, gravity);
-
-        var velocity = inertia;
-
-        velocity = ClampRaycastCollision(velocity);
+        moveDelta = ClampRaycastCollision(moveDelta);
 
         var pos = transform.localPosition;
-        transform.localPosition = pos + velocity;
+        pos += moveDelta;
+        transform.localPosition = pos;
+    }
+
+    void Update()
+    {
+        // placeholder
+        Move(new Vector2(
+            Input.GetAxis("Horizontal"),
+            Input.GetAxis("Vertical")
+        ));
     }
 
     Vector3 ClampRaycastCollision(Vector3 velocity)
@@ -156,6 +159,7 @@ public class TFixManController : MonoBehaviour
             }
         }
 
+        castPos += new Vector3(0, colliderRadius, 0);
         if(Physics.Raycast(castPos, transform.TransformDirection(new Vector3(0, -1, 0)), out hitInfo, castDist)) {
             //Debug.Log("see left");
             if(hitInfo.distance < colliderRadius) {
@@ -187,19 +191,7 @@ public class TFixManController : MonoBehaviour
         return velocity;
     }
 
-    void OnCollisionStay(Collision collision)
-    {
-        return;
-        Debug.Log("hit");
-
-        var pos = transform.position;
-        foreach (ContactPoint contact in collision.contacts)
-        {
-            Debug.Log(contact.separation);
-            pos += contact.normal * contact.separation;
-            //Debug.DrawRay(contact.point, contact.normal, Color.white);
-        }
-
-        transform.position = pos;
+    void Move(Vector2 input) {
+        this.dir = new Vector3(input.x, input.y, 0);
     }
 }
