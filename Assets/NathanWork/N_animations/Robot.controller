@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frameRate: 12
   persistFrames: 0
-  animationPrefab: {fileID: -927199367670048503, guid: 4f09e94abdf211841a90f55bd2040ea7,
+  animationPrefab: {fileID: 8191456740645374276, guid: aa0ff403d63f34d42be1268de8006ee4,
     type: 3}
   resetFrameOnEnter: 1
 --- !u!1102 &-1871310593608432323

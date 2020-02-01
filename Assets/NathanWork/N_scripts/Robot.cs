@@ -4,24 +4,23 @@ using UnityEngine;
 
 public class Robot : MonoBehaviour
 {
-    public int health = 10;
+    public BoxCollider boxCollider;
 
-    // Start is called before the first frame update
+    private int health;
+
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        health = GameLogic.health;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "bullet")
-            Destroy(gameObject);
+        if (other.gameObject.tag == "Fist")
+        {
+            print("Hit!");
+            health -= GameLogic.punchDamage;
+        }
+            
     }
 
 }
