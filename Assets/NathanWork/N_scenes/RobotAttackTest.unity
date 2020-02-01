@@ -596,6 +596,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Repairman
       objectReference: {fileID: 0}
+    - target: {fileID: 2196839336181967098, guid: 9caa9bc077871cd68be0500ea92e0c89,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 3440510669591570235, guid: 9caa9bc077871cd68be0500ea92e0c89,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1117,7 +1122,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 5608919863821565391}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1666155979
+--- !u!114 &1666155980
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1486,6 +1491,11 @@ PrefabInstance:
       propertyPath: m_Size.z
       value: 3.11
       objectReference: {fileID: 0}
+    - target: {fileID: 5608919864940786060, guid: c8f7f548a1ec63f46b45cc15b506af73,
+        type: 3}
+      propertyPath: roomManager
+      value: 
+      objectReference: {fileID: 1666155980}
     - target: {fileID: 5608919865284727188, guid: c8f7f548a1ec63f46b45cc15b506af73,
         type: 3}
       propertyPath: m_LocalPosition.y

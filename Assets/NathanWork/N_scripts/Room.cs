@@ -15,7 +15,10 @@ public class Room : MonoBehaviour
         target = GetComponentInChildren<SpriteRenderer>();
     }
 
-    
 
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 
 }
