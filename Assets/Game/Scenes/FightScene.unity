@@ -121,6 +121,124 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &167163523
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 167163526}
+  - component: {fileID: 167163525}
+  - component: {fileID: 167163524}
+  m_Layer: 2
+  m_Name: LadderTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &167163524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167163523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0487e8736eb0ac3ad7a50f62962a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTop: 0
+  throughFloor: 0
+--- !u!65 &167163525
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167163523}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &167163526
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167163523}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.15, y: 26.18, z: -0.067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &278322819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 278322821}
+  - component: {fileID: 278322820}
+  - component: {fileID: 278322822}
+  m_Layer: 2
+  m_Name: LadderTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &278322820
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278322819}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 2, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &278322821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278322819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.15, y: 32.51, z: -0.067}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &278322822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278322819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0487e8736eb0ac3ad7a50f62962a9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isTop: 1
+  throughFloor: 1
 --- !u!1001 &679266446
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -205,13 +323,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5679830096630764438, guid: 9caa9bc077871cd68be0500ea92e0c89,
         type: 3}
-      propertyPath: maxSpeed
-      value: 10
+      propertyPath: jumpSpeed
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5679830096630764438, guid: 9caa9bc077871cd68be0500ea92e0c89,
         type: 3}
-      propertyPath: decel
-      value: 0.1
+      propertyPath: gravity
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7187981130810437181, guid: 9caa9bc077871cd68be0500ea92e0c89,
         type: 3}
@@ -221,12 +339,17 @@ PrefabInstance:
     - target: {fileID: 7187981130810437181, guid: 9caa9bc077871cd68be0500ea92e0c89,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7187981130810437181, guid: 9caa9bc077871cd68be0500ea92e0c89,
         type: 3}
       propertyPath: m_Radius
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187981130810437181, guid: 9caa9bc077871cd68be0500ea92e0c89,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9caa9bc077871cd68be0500ea92e0c89, type: 3}
@@ -572,6 +695,38 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1926797953 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2196839336181967098, guid: 9caa9bc077871cd68be0500ea92e0c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 679266446}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1926797954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926797953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebff17a9c578ce611823f987c824ce19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  moveOffTimer: 0.5
+--- !u!114 &1926797959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926797953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40176234963c03104829604c3b287e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8411690881161440308
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -83,15 +83,6 @@ public class RepairmanMotor : MonoBehaviour
         transform.localPosition = pos;
     }
 
-    void Update()
-    {
-        // placeholder
-        Move(new Vector2(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical")
-        ));
-    }
-
     Vector3 ClampRaycastCollision(Vector3 velocity)
     {
         float castDist = 2.0f;
@@ -191,7 +182,7 @@ public class RepairmanMotor : MonoBehaviour
         return velocity;
     }
 
-    void Move(Vector2 input) {
+    public void Move(Vector2 input) {
         this.dir = new Vector3(input.x, input.y, 0);
     }
 }
