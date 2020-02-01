@@ -28,10 +28,10 @@ public class RepairmanInput : MonoBehaviour
 
         if(ladderMove.OnLadder()) {
             ladderMove.Move(input);
-            motor.enabled = false;
+            motor.Enable(false);
         }
         else {
-            motor.enabled = true;
+            motor.Enable(true);
             motor.Move(input);
         }
     }
