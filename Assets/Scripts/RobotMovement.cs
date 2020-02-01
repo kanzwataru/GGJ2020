@@ -39,12 +39,14 @@ public class RobotMovement : MonoBehaviour
         }
 
 
-        if (Input.GetKey(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X))
         {
             //jump
             Debug.Log("Jump");
+            rb.AddForce(transform.forward * 1000, ForceMode.Impulse);
             /*rb.AddForce(0, jumpSpeed, 0, ForceMode.Impulse);
                //moveDirection = Vector3.Lerp(moveDirection, Vector3.zero, deceleration * Time.deltaTime);*/
+
 
 
 
