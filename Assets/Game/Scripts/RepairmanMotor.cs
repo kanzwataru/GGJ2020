@@ -22,6 +22,21 @@ public class RepairmanMotor : MonoBehaviour
 
     float colliderRadius;
 
+    public void Move(Vector2 input) {
+        this.dir = new Vector3(input.x, input.y, 0);
+    }
+
+    public void ResetInertia() {
+        inertia = Vector3.zero;
+    }
+
+    public void Enable(bool value) {
+        if(enabled != value)
+            ResetInertia();
+        
+        enabled = value;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -180,9 +195,5 @@ public class RepairmanMotor : MonoBehaviour
         }
 
         return velocity;
-    }
-
-    public void Move(Vector2 input) {
-        this.dir = new Vector3(input.x, input.y, 0);
     }
 }

@@ -81,7 +81,15 @@ public class LadderMovement : MonoBehaviour
         }
 
         if(currentTrigger && !currentTrigger.throughFloor) {
-            //if(currentT)
+            if(currentTrigger.isTop) {
+                
+            }
+            else {
+                //var ladderPoint = transform.InverseTransformPoint(currentTrigger.transform.position);
+                var ladderPoint = currentTrigger.transform.position;
+                Debug.Log(ladderPoint.ToString() + " " + pos.ToString());
+                pos.y = Mathf.Max(ladderPoint.y, pos.y);
+            }
             //Mathf.Clamp(pos.y, )
         }
 
