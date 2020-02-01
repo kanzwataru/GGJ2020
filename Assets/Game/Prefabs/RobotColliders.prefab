@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8555990922929809793}
-  - component: {fileID: 7633813505345239727}
   - component: {fileID: 7701241158284151931}
   m_Layer: 0
   m_Name: Collider (12)
@@ -32,14 +31,6 @@ Transform:
   m_Father: {fileID: 1721851688928922426}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &7633813505345239727
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2056862731358077781}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &7701241158284151931
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -62,7 +53,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 323465432547096229}
-  - component: {fileID: 6776862475537288851}
   - component: {fileID: 5761204704738479394}
   m_Layer: 0
   m_Name: Collider (11)
@@ -85,14 +75,6 @@ Transform:
   m_Father: {fileID: 1721851688928922426}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6776862475537288851
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2752972153557136992}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &5761204704738479394
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -115,7 +97,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6354605231133662819}
-  - component: {fileID: 8479985916044929571}
   - component: {fileID: 6555732437435634257}
   m_Layer: 0
   m_Name: Collider (13)
@@ -138,14 +119,6 @@ Transform:
   m_Father: {fileID: 1721851688928922426}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8479985916044929571
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4520867492654544818}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &6555732437435634257
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -168,7 +141,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8501992608644197029}
-  - component: {fileID: 1599747795120904752}
   - component: {fileID: 5633274960672050200}
   m_Layer: 0
   m_Name: Collider (7)
@@ -191,14 +163,6 @@ Transform:
   m_Father: {fileID: 1721851688928922426}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1599747795120904752
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5865307688305551466}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &5633274960672050200
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -258,7 +222,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3922117480598534542}
-  - component: {fileID: 4790041781858532435}
   - component: {fileID: 8472816526484593160}
   m_Layer: 0
   m_Name: Collider (9)
@@ -281,14 +244,6 @@ Transform:
   m_Father: {fileID: 1721851688928922426}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4790041781858532435
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6808398816025039919}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &8472816526484593160
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -311,7 +266,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2941926843904762344}
-  - component: {fileID: 8609789865709468844}
   - component: {fileID: 2174235408834831321}
   m_Layer: 0
   m_Name: Collider (10)
@@ -334,14 +288,6 @@ Transform:
   m_Father: {fileID: 1721851688928922426}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8609789865709468844
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7203049448920133894}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &2174235408834831321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -364,7 +310,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2941848436457080734}
-  - component: {fileID: 6518250791995028907}
   - component: {fileID: 5872198619254025422}
   m_Layer: 0
   m_Name: Collider (8)
@@ -387,14 +332,6 @@ Transform:
   m_Father: {fileID: 1721851688928922426}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6518250791995028907
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8492139013679235873}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!65 &5872198619254025422
 BoxCollider:
   m_ObjectHideFlags: 0
