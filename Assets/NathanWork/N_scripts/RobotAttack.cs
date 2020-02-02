@@ -12,6 +12,7 @@ public class RobotAttack : MonoBehaviour
     public Animator robotAnimator;
 
     public RoomManager roomManager;
+    [HideInInspector] public bool canAttack = true;
     private int numberOfRooms;
     private int currentTarget = 0;
 
@@ -20,12 +21,13 @@ public class RobotAttack : MonoBehaviour
         robotAnimator = robotAnimator.GetComponent<Animator>();
         roomManager = roomManager.GetComponent<RoomManager>();
         numberOfRooms = roomManager.rooms.Length;
+        canAttack = true;
     }
 
     void Update()
     {
         //punch
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && canAttack)
         {
             robotAnimator.SetTrigger("punch"); 
             //has a frame with a boxcollider set ontrigger for tag "Fist"
@@ -52,7 +54,7 @@ public class RobotAttack : MonoBehaviour
         }
 
         //fire missile
-        if (Input.GetKeyDown("c"))
+        if (Input.GetKeyDown("c") && canAttack)
         {
             //check if missile silo is full
             //start a cooldown

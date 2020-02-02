@@ -5,12 +5,17 @@ using UnityEngine;
 public class Robot : MonoBehaviour
 {
     public BoxCollider boxCollider;
+    public Animator chickenAnimator;
 
     private int health;
+    private RobotAttack robotAttack;
+    public bool isBlocking = false;
+    public float speed = 1.5f;
 
     void Start()
     {
         health = GameLogic.health;
+        robotAttack = this.gameObject.GetComponent<RobotAttack>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -20,7 +25,44 @@ public class Robot : MonoBehaviour
             print("Hit!");
             health -= GameLogic.punchDamage;
         }
-            
+    }
+
+    private void Update()
+    {
+        float inputH = Input.GetAxis("Horizontal");
+
+        if (!isBlocking)
+        {
+            gameObject.transform.position = new Vector2(transform.position.x + (inputH * speed * Time.deltaTime), transform.position.y);
+        }
+
+        if (inputH != 0)
+        {
+            chickenAnimator.SetBool("isWalking", true);
+        } else
+        {
+            chickenAnimator.SetBool("isWalking", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.G) && !isBlocking)
+        {
+            chickenAnimator.SetTrigger("jump");
+        }
+
+        if (Input.GetKey(KeyCode.B) && robotAttack.canAttack)
+        {
+            chickenAnimator.SetBool("isBlocking", true);
+            robotAttack.canAttack = false;
+            isBlocking = true;
+        }
+
+        if (Input.GetKeyUp(KeyCode.B))
+        {
+            chickenAnimator.SetBool("isBlocking", false);
+            robotAttack.canAttack = true;
+            isBlocking = false;
+        }
+
     }
 
 }
