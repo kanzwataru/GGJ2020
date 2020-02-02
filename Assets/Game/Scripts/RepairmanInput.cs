@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class RepairmanInput : MonoBehaviour
 {
     RepairmanMotor motor;
+    RepairmanFix fix;
     BetterLadderMovement ladderMove;
 
     public int facingDir = 1;
@@ -15,18 +16,26 @@ public class RepairmanInput : MonoBehaviour
     {
         motor = GetComponent<RepairmanMotor>();
         ladderMove = GetComponent<BetterLadderMovement>();
+        fix = GetComponent<RepairmanFix>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        var gamepad = UnityEngine.InputSystem.Gamepad.current;
+        var gamepad = GetComponent<Player>().GetGamepad();
 
         var input = new Vector3(
             gamepad.leftStick.x.ReadValue(),
             gamepad.leftStick.y.ReadValue(),
             0
         );
+
+        if(gamepad.leftTrigger.ReadValue() > 0) {
+            fix.Fix();
+        }
+        else {
+            fix.StopFixing();
+        }
 
         if(input.x != 0)
             facingDir = input.x > 0 ? 1 : -1;

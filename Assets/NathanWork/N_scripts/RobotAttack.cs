@@ -26,7 +26,8 @@ public class RobotAttack : MonoBehaviour
 
     void Update()
     {
-        var gamepad = UnityEngine.InputSystem.Gamepad.current;
+        var id = isPlayerOne ? 0 : 1;
+        var gamepad = PlayerManager.players[id].GetGamepad();
 
         //punch
         if(gamepad.squareButton.ReadValue() > 0 && canAttack)

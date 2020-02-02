@@ -29,7 +29,8 @@ public class Robot : MonoBehaviour
 
     private void Update()
     {
-        var gamepad = UnityEngine.InputSystem.Gamepad.current;
+        var id = GetComponent<RobotAttack>().isPlayerOne ? 0 : 1;
+        var gamepad = PlayerManager.players[id].GetGamepad();
 
         //float inputH = Input.GetAxis("Horizontal");
         float inputH = gamepad.rightStick.x.ReadValue();

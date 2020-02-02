@@ -6,6 +6,7 @@ public class RepairmanAnimCoordinator : MonoBehaviour
 {
     public Transform visuals;
 
+    RepairmanFix fix;
     RepairmanInput rinput;
     RepairmanMotor motor;
     BetterLadderMovement ladderMove;
@@ -20,6 +21,7 @@ public class RepairmanAnimCoordinator : MonoBehaviour
         ladderMove = GetComponent<BetterLadderMovement>();
         animator = visuals.GetComponent<Animator>();
         rinput = GetComponent<RepairmanInput>();
+        fix = GetComponent<RepairmanFix>();
 
         lastXPos = transform.localPosition.x;
     }
@@ -30,6 +32,7 @@ public class RepairmanAnimCoordinator : MonoBehaviour
         animator.SetBool("isRunning", motor.IsRunning());
         animator.SetBool("isJumping", motor.IsJumping());
         animator.SetBool("isClimbing", ladderMove.OnLadder());
+        animator.SetBool("isFixing", fix.IsFixing());
 
         float xPos = transform.localPosition.x;
 
