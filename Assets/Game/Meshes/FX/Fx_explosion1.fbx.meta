@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: 3928244756152794525
     second: anim_stack
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Single Sided Material
+    second: {fileID: 2100000, guid: eb34a82ff377d6149800c5a62f1d2ba4, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -37,7 +42,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
