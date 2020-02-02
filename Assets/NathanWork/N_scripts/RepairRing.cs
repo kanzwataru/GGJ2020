@@ -80,7 +80,7 @@ public class RepairRing : MonoBehaviour
 
         if (canPlay)
         {
-            if (Input.GetKeyDown("space"))
+            if (Input.GetKeyDown("z"))
             {
                 canPlay = false;
                 playerRing.localScale = Vector2.zero;
