@@ -56,6 +56,7 @@ public class JumpTest : MonoBehaviour
 
         graphValue = animCurve.Evaluate(Time.time);
 
+     
        
         
     }

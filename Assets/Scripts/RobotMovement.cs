@@ -13,11 +13,11 @@ public class RobotMovement : MonoBehaviour
     public float deceleration;
     public float jumpSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool isJumping = false;
+    public bool isGrounded = true;
+
+
+    
 
     // Update is called once per frame
     void Update()
@@ -28,16 +28,26 @@ public class RobotMovement : MonoBehaviour
         rb.velocity = moveDirection * moveSpeed;
 
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && isGrounded)
         {
             //anim.SetTrigger("isPunching");
-            anim.SetBool("isRealPunching", true);
-        }
-        if (Input.GetKeyUp(KeyCode.Z))
-        {
-            anim.SetBool("isRealPunching", false);
+            anim.SetBool("isJumping", true);
+            rb.AddForce(transform.up * 100, ForceMode.Impulse);
+            isJumping = true;
+            isGrounded = false;
+            
+            StartCoroutine(grounded());
+            
         }
 
+        
+
+
+
+        /*if (Input.GetKeyUp(KeyCode.Z))
+        {
+            anim.SetBool("isJumping", false);
+        }
 
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -47,10 +57,21 @@ public class RobotMovement : MonoBehaviour
             /*rb.AddForce(0, jumpSpeed, 0, ForceMode.Impulse);
                //moveDirection = Vector3.Lerp(moveDirection, Vector3.zero, deceleration * Time.deltaTime);*/
 
-
-
-
+    IEnumerator grounded()
+        {
+            Debug.Log("grounded");
+            yield return new WaitForSeconds(1f);
+            isJumping = false;
+            isGrounded = true;
         }
 
     }
+
+
+    public void FixedUpdate()
+    {
+        GetComponent<Rigidbody>().AddForce(Physics.gravity * 20f, ForceMode.Acceleration);
+    }
+
 }
+
