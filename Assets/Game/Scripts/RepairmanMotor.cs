@@ -176,12 +176,12 @@ public class RepairmanMotor : MonoBehaviour
         castPos += new Vector3(0, colliderRadius, 0);
         if(Physics.Raycast(castPos, transform.TransformDirection(new Vector3(0, -1, 0)), out hitInfo, castDist)) {
             //Debug.Log("see left");
-            if(hitInfo.distance < colliderRadius) {
-                velocity.y = ((colliderRadius + stopDist) - hitInfo.distance);
+            if(hitInfo.distance < colliderRadius / 2 + stopDist) {
+                velocity.y = ((stopDist) - hitInfo.distance);
                 inertia.y = 0;
                 //Debug.Log("penetrating left");
             }
-            else if(hitInfo.distance < colliderRadius + stopDist) {
+            else if(hitInfo.distance < stopDist) {
                 velocity.y = Mathf.Max(velocity.y, 0);
                 inertia.y = 0;
             }
