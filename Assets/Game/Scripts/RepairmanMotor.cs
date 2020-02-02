@@ -21,6 +21,7 @@ public class RepairmanMotor : MonoBehaviour
     bool jumpDone = false;
 
     float colliderRadius;
+    float colliderHeight;
 
     public void Move(Vector2 input) {
         this.dir = new Vector3(input.x, input.y, 0);
@@ -50,6 +51,7 @@ public class RepairmanMotor : MonoBehaviour
     {
         jumpTimer = jumpTimerLength;
         colliderRadius = GetComponent<CapsuleCollider>().radius;
+        colliderHeight = GetComponent<CapsuleCollider>().height;
     }
 
     float CalcInertia(float current, float dir, float accel, float decel) {
@@ -109,8 +111,9 @@ public class RepairmanMotor : MonoBehaviour
     Vector3 ClampRaycastCollision(Vector3 velocity)
     {
         float castDist = 2.0f;
-        var castPos = transform.position;
-        var nextCastPos = transform.position + transform.TransformDirection(velocity);
+        var castPos = transform.position + transform.up * colliderHeight / 2;
+        var nextCastPos = transform.position + transform.up * colliderHeight / 2 + transform.TransformDirection(velocity);
+        var height = colliderHeight / 2;
 
         Debug.DrawRay(castPos, transform.TransformDirection(new Vector3(castDist, 0, 0)));
         Debug.DrawRay(castPos, transform.TransformDirection(new Vector3(-castDist, 0, 0)));
@@ -176,8 +179,8 @@ public class RepairmanMotor : MonoBehaviour
         castPos += new Vector3(0, colliderRadius, 0);
         if(Physics.Raycast(castPos, transform.TransformDirection(new Vector3(0, -1, 0)), out hitInfo, castDist)) {
             //Debug.Log("see left");
-            if(hitInfo.distance < colliderRadius / 2 + stopDist) {
-                velocity.y = ((stopDist) - hitInfo.distance);
+            if(hitInfo.distance < height + stopDist) {
+                velocity.y = ((height + stopDist) - hitInfo.distance);
                 inertia.y = 0;
                 //Debug.Log("penetrating left");
             }
@@ -188,7 +191,7 @@ public class RepairmanMotor : MonoBehaviour
             else {
                 RaycastHit nextHitInfo;
                 if(Physics.Raycast(nextCastPos, transform.TransformDirection(new Vector3(0, -1, 0)), out nextHitInfo, castDist)) {
-                    if(nextHitInfo.distance < colliderRadius) {
+                    if(nextHitInfo.distance < height + stopDist) {
                         velocity.y = Mathf.Max(velocity.y, 0);
                         inertia.y = 0;
                         //Debug.Log("will have penetrated right");
