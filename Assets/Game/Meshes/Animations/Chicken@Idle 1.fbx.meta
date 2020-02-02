@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: a46b0f38353832a4dac7aea56bb2be99
+guid: ad3df5a7af7c7e140b796aa1c6caac11
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: 7130598552778831252
-    second: ChickenJump_start
+      74: -3100369314251171874
+    second: Idle
   externalObjects: {}
   materials:
     materialImportMode: 1

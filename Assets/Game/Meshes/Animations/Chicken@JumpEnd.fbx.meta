@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: e83403da5347e5941a665d7305841d78
+guid: 9194de24e79a81241ba4adb6adaa5fa9
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: 6928980897458461816
-    second: ChickenJumpHang
+      74: 7413527215629608627
+    second: ChickenJumpLand
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -37,7 +37,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
