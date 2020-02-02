@@ -5,14 +5,14 @@ public class SlowMotion : MonoBehaviour
 {
 
     float currentAmount = 0f;
-    float maxAmount = 5f;
+    float maxAmount = 3f;
 
 
     // Update is called once per frame
     void Update()
-    {
-            if (Time.timeScale == 1.0f)
-                Time.timeScale = 0.3f;
+    { 
+            if (Time.timeScale <= 1.0f)
+                Time.timeScale = 0.2f;
 
             else
 
@@ -21,10 +21,10 @@ public class SlowMotion : MonoBehaviour
         
 
 
-        if (Time.timeScale == 0.03f)
+        if (Time.timeScale <= 0.03f)
         {
 
-            currentAmount += Time.deltaTime;
+            currentAmount ++;
         }
 
         if (currentAmount > maxAmount)
