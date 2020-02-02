@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: ad3df5a7af7c7e140b796aa1c6caac11
+guid: 906df3820d12c2b419709285f25c7707
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: -3100369314251171874
-    second: Idle
+      74: -3419257869308726280
+    second: walk
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -37,7 +37,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
