@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 7187981130810437181}
   - component: {fileID: 5679830096630764438}
   - component: {fileID: 950120862511722981}
+  - component: {fileID: 1926797954}
+  - component: {fileID: 1926797959}
   m_Layer: 0
   m_Name: Repairman
   m_TagString: Player
@@ -34,7 +36,7 @@ Transform:
   - {fileID: 8351736129714334268}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 36.238003}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &5267168141889806501
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -80,8 +82,8 @@ MonoBehaviour:
   maxSpeed: 10
   accel: 0.5
   decel: 0.1
-  jumpSpeed: 15
-  jumpAccel: 0.95
+  jumpSpeed: 20
+  jumpAccel: 0.85
   jumpDecel: 0.25
   jumpTimerLength: 0.15
   gravity: 10
@@ -99,6 +101,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals: {fileID: 8351736129714334268}
+--- !u!114 &1926797954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196839336181967098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebff17a9c578ce611823f987c824ce19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+  moveOffTimer: 0.5
+--- !u!114 &1926797959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196839336181967098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40176234963c03104829604c3b287e4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5652931181793917425
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +244,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: worker_idle
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: e97448aa280a3ce44ac24e3125ba8e0b,
+        type: 3}
+      propertyPath: m_TagString
+      value: EditorOnly
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e97448aa280a3ce44ac24e3125ba8e0b, type: 3}

@@ -58,6 +58,10 @@ public class RobotAttack : MonoBehaviour
             //start a cooldown
             //animation
             roomManager.rooms[currentTarget].roomHit = true;
+            roomManager.rooms[currentTarget].target.enabled = false;
+            roomManager.rooms[currentTarget].sparkMachine.SetBool("sparking", true);
+            roomManager.rooms[currentTarget].explosionMachine.SetTrigger("explode");
+            roomManager.rooms[currentTarget].explosionMachine.SetBool("exploding", true);
         }
     }
 }
