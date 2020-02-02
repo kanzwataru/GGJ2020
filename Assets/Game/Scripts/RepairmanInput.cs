@@ -5,13 +5,15 @@ using UnityEngine;
 public class RepairmanInput : MonoBehaviour
 {
     RepairmanMotor motor;
-    LadderMovement ladderMove;
+    BetterLadderMovement ladderMove;
+
+    public int facingDir = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         motor = GetComponent<RepairmanMotor>();
-        ladderMove = GetComponent<LadderMovement>();
+        ladderMove = GetComponent<BetterLadderMovement>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,9 @@ public class RepairmanInput : MonoBehaviour
             Input.GetAxis("Horizontal"),
             Input.GetAxis("Vertical")
         );
+
+        if(input.x != 0)
+            facingDir = input.x > 0 ? 1 : -1;
 
         if(ladderMove.CanClimb() && Input.GetAxis("Vertical") != 0 && !ladderMove.OnLadder()) {
             ladderMove.StartClimb();
