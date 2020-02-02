@@ -26,15 +26,19 @@ public class RobotAttack : MonoBehaviour
 
     void Update()
     {
+        var gamepad = UnityEngine.InputSystem.Gamepad.current;
+
         //punch
-        if (Input.GetKeyDown("space") && canAttack)
+        if(gamepad.squareButton.ReadValue() > 0 && canAttack)
+        //if (Input.GetKeyDown("space") && canAttack)
         {
             robotAnimator.SetTrigger("punch"); 
             //has a frame with a boxcollider set ontrigger for tag "Fist"
         }
 
         //change target
-        if (Input.GetKeyDown("x"))
+        //if (Input.GetKeyDown("x"))
+        if(gamepad.triangleButton.wasPressedThisFrame)
         {
             roomManager.rooms[currentTarget].target.enabled = false;
             currentTarget = (currentTarget + 1) % numberOfRooms;
@@ -54,7 +58,8 @@ public class RobotAttack : MonoBehaviour
         }
 
         //fire missile
-        if (Input.GetKeyDown("c") && canAttack)
+        //if (Input.GetKeyDown("c") && canAttack)
+        if(gamepad.circleButton.wasPressedThisFrame && canAttack)
         {
             //check if missile silo is full
             //start a cooldown
