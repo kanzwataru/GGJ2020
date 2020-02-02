@@ -36,7 +36,7 @@ public class TMP_Timer : MonoBehaviour
 
 		timer.text = ("" + timerLeft);
 
-        if (timerLeft == 90)
+        if (timerLeft == 10)
         {
             anim.SetBool("timeEnd", true);
         }
@@ -45,9 +45,10 @@ public class TMP_Timer : MonoBehaviour
 
 	private void GameFinished()
 	{
-		if (timer.text == ("95"))
+		if (timer.text == ("90"))
 		{
 			Debug.Log("Game Finished");
+            anim.SetBool("timeEnd", false);
 		}
 	}
 
