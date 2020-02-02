@@ -12,7 +12,7 @@ public class RobotAttack : MonoBehaviour
     public Animator robotAnimator;
 
     public RoomManager roomManager;
-    public bool canAttack = false;
+    [HideInInspector] public bool canAttack = true;
     private int numberOfRooms;
     private int currentTarget = 0;
 
@@ -21,6 +21,7 @@ public class RobotAttack : MonoBehaviour
         robotAnimator = robotAnimator.GetComponent<Animator>();
         roomManager = roomManager.GetComponent<RoomManager>();
         numberOfRooms = roomManager.rooms.Length;
+        canAttack = true;
     }
 
     void Update()

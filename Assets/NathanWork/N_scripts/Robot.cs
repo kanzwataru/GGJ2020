@@ -9,7 +9,7 @@ public class Robot : MonoBehaviour
 
     private int health;
     private RobotAttack robotAttack;
-    private bool isBlocking = false;
+    public bool isBlocking = false;
     public float speed = 1.5f;
 
     void Start()
@@ -49,7 +49,7 @@ public class Robot : MonoBehaviour
             chickenAnimator.SetTrigger("jump");
         }
 
-        if (Input.GetKey(KeyCode.B))
+        if (Input.GetKey(KeyCode.B) && robotAttack.canAttack)
         {
             chickenAnimator.SetBool("isBlocking", true);
             robotAttack.canAttack = false;
