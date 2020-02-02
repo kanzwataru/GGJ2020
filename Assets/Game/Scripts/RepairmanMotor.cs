@@ -71,7 +71,7 @@ public class RepairmanMotor : MonoBehaviour
     float CalcJump(float input) {
         float force = 0;
 
-        if(input > 0) {
+        if(input > 0.4f) {
             if(jumpTimer < jumpTimerLength) {
                 jumpTimer += Time.deltaTime;
                 force = 1;

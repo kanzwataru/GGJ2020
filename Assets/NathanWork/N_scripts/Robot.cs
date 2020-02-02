@@ -32,6 +32,12 @@ public class Robot : MonoBehaviour
 
     private void Update()
     {
+        var id = GetComponent<RobotAttack>().isPlayerOne ? 0 : 1;
+        var gamepad = PlayerManager.players[id].GetGamepad();
+
+        //float inputH = Input.GetAxis("Horizontal");
+        float inputH = gamepad.rightStick.x.ReadValue();
+
         if (!isBlocking && canWalk)
         {
             inputH = Input.GetAxis("Horizontal");
@@ -49,19 +55,22 @@ public class Robot : MonoBehaviour
             chickenAnimator.SetBool("isWalking", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && !isBlocking)
+        //if (Input.GetKeyDown(KeyCode.G) && !isBlocking)
+        if (gamepad.crossButton.wasPressedThisFrame && !isBlocking)
         {
             chickenAnimator.SetTrigger("jump");
         }
 
-        if (Input.GetKey(KeyCode.B) && robotAttack.canAttack)
+        //if (Input.GetKey(KeyCode.B) && robotAttack.canAttack)
+        if (gamepad.rightShoulder.wasPressedThisFrame && robotAttack.canAttack)
         {
             chickenAnimator.SetBool("isBlocking", true);
             robotAttack.canAttack = false;
             isBlocking = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.B))
+        //if (Input.GetKeyUp(KeyCode.B))
+        if(gamepad.rightShoulder.wasReleasedThisFrame)
         {
             chickenAnimator.SetBool("isBlocking", false);
             robotAttack.canAttack = true;

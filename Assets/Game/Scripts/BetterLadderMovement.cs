@@ -83,7 +83,7 @@ public class BetterLadderMovement : MonoBehaviour
         
         var pos = transform.localPosition;
 
-        if((dir.x > 0.3f || dir.x < -0.3f) && dir.y < 0.3f) {
+        if((dir.x > 0.3f || dir.x < -0.3f)) {
             StopClimb();
         }
 
