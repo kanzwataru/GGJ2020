@@ -32,6 +32,6 @@ public class MainMenu : MonoBehaviour
         fade.SetActive(true);
         yield return new WaitForSeconds(time);
         
-        SceneManager.LoadScene("UIScene");
+        SceneManager.LoadScene("BestFightScene");
     }
 }

@@ -31,6 +31,22 @@ public class RobotAttack : MonoBehaviour
         canPunch = isFixed;
     }
 
+    void OnTriggerEnter(Collider other) {
+        Debug.Log("PUNCH");
+        if(other.gameObject == gameObject)
+            return;
+        
+        var health_1 = other.gameObject.GetComponent<PlayerHealthScript>();
+        if(health_1) {
+            health_1.DamagePlayer1Punch();
+        }
+        
+        var health_2 = other.gameObject.GetComponent<PlayerHealthScript2>();
+        if(health_2) {
+            health_2.DamagePlayer2Punch();
+        }
+    }
+
     void Update()
     {
         var id = isPlayerOne ? 0 : 1;

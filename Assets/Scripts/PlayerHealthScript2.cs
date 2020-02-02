@@ -36,7 +36,7 @@ public class PlayerHealthScript2 : MonoBehaviour
 
         UIHealth2.instance.healthSlider.maxValue = maxHealth;
         UIHealth2.instance.healthSlider.value = currentHealth;
-        UIHealth2.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        //UIHealth2.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
     // Update is called once per frame
