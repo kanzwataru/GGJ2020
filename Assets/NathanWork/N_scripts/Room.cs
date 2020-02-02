@@ -9,7 +9,6 @@ public class Room : MonoBehaviour
     public Transform repairGuide;
     private GameObject repairGame;
     private bool inRoom = false;
-
     public bool roomHit = false;
 
     private void Start()
