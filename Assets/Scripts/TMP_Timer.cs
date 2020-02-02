@@ -9,6 +9,7 @@ public class TMP_Timer : MonoBehaviour
 	public TMP_Text timer;
 	public int timerLeft = 99;
 	public int endTime = 0;
+    public Animator anim;
 	// Start is called before the first frame update
 	void Start()
 	{
@@ -26,6 +27,7 @@ public class TMP_Timer : MonoBehaviour
 
 		}
 
+        
 	}
 
 	// Update is called once per frame
@@ -34,8 +36,11 @@ public class TMP_Timer : MonoBehaviour
 
 		timer.text = ("" + timerLeft);
 
-
-	}
+        if (timerLeft == 90)
+        {
+            anim.SetBool("timeEnd", true);
+        }
+    }
 
 
 	private void GameFinished()

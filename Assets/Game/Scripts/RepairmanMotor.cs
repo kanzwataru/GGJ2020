@@ -22,6 +22,21 @@ public class RepairmanMotor : MonoBehaviour
 
     float colliderRadius;
 
+    public void Move(Vector2 input) {
+        this.dir = new Vector3(input.x, input.y, 0);
+    }
+
+    public void ResetInertia() {
+        inertia = Vector3.zero;
+    }
+
+    public void Enable(bool value) {
+        if(enabled != value)
+            ResetInertia();
+        
+        enabled = value;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -81,15 +96,6 @@ public class RepairmanMotor : MonoBehaviour
         var pos = transform.localPosition;
         pos += moveDelta;
         transform.localPosition = pos;
-    }
-
-    void Update()
-    {
-        // placeholder
-        Move(new Vector2(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical")
-        ));
     }
 
     Vector3 ClampRaycastCollision(Vector3 velocity)
@@ -189,9 +195,5 @@ public class RepairmanMotor : MonoBehaviour
         }
 
         return velocity;
-    }
-
-    void Move(Vector2 input) {
-        this.dir = new Vector3(input.x, input.y, 0);
     }
 }

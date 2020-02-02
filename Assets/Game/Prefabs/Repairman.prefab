@@ -76,9 +76,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1c9f42dfbe8a26583a4862a6340d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 1
+  maxSpeed: 10
   accel: 0.5
-  decel: 0.25
+  decel: 0.1
   jumpSpeed: 2
   jumpAccel: 0.95
   jumpDecel: 0.25
