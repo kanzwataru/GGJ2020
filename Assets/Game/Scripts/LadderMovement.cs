@@ -73,6 +73,9 @@ public class LadderMovement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if(!OnLadder())
+            return;
+
         var pos = transform.localPosition;
         pos.y += dir.y * moveSpeed * Time.deltaTime;
 

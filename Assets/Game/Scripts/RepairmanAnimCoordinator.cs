@@ -6,6 +6,7 @@ public class RepairmanAnimCoordinator : MonoBehaviour
 {
     public Transform visuals;
 
+    RepairmanInput rinput;
     RepairmanMotor motor;
     LadderMovement ladderMove;
     Animator       animator;
@@ -18,6 +19,7 @@ public class RepairmanAnimCoordinator : MonoBehaviour
         motor = GetComponent<RepairmanMotor>();
         ladderMove = GetComponent<LadderMovement>();
         animator = visuals.GetComponent<Animator>();
+        rinput = GetComponent<RepairmanInput>();
 
         lastXPos = transform.localPosition.x;
     }
@@ -31,11 +33,17 @@ public class RepairmanAnimCoordinator : MonoBehaviour
 
         float xPos = transform.localPosition.x;
 
+        /*
         if(xPos > lastXPos) {
-            ladderMove.transform.localScale = new Vector3(1, 1, 1);
+            visuals.transform.localScale = new Vector3(1, 1, 1);
         }
         else if(xPos < lastXPos) {
-            ladderMove.transform.localScale = new Vector3(-1, 1, 1);
+            visuals.transform.localScale = new Vector3(1, 1, -1);
+        }
+        */
+
+        if(rinput.facingDir != 0) {
+            visuals.transform.localScale = new Vector3(1, 1, rinput.facingDir);
         }
 
         lastXPos = xPos;

@@ -23,6 +23,7 @@ public class QuillAnimNode : StateMachineBehaviour {
 		var anim_object = Instantiate(animationPrefab, this_object.transform.position, this_object.transform.rotation);
 		var anim_object_xform = anim_object.transform;
 		anim_object_xform.parent = this_object.transform;
+		anim_object_xform.localScale = new Vector3(1, 1, 1);
 
 		_animInstance = new QuillAnimation(anim_object_xform, frameRate, persistFrames);
 		_animObject = anim_object;
