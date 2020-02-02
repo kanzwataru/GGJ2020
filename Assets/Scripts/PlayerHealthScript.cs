@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthScript : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlayerHealthScript : MonoBehaviour
     public float timer;
     public float timer2;
     public GameObject whoWins;
+    public GameObject whoWins2;
+
+    public bool player1Dead = false;
     // Start is called before the first frame update
 
 
@@ -166,10 +170,16 @@ public class PlayerHealthScript : MonoBehaviour
     {
         slowmotion.SetActive(true);
         yield return new WaitForSeconds(timer);
-        slowmotion.SetActive(false);
+        
         isDead = false;
+        player1Dead = true;
         yield return new WaitForSeconds(timer2);
         whoWins.SetActive(true);
+        //whoWins.SetActive(true);
+        //whoWins2.SetActive(true);
+        yield return new WaitForSeconds(timer);
+        SceneManager.LoadScene("MenuScene");
+
 
     }
 }

@@ -228,7 +228,7 @@ RectTransform:
   - {fileID: 1556942660}
   - {fileID: 601196425}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -269,6 +269,8 @@ MonoBehaviour:
   timer: 0
   timer2: 0
   whoWins: {fileID: 0}
+  whoWins2: {fileID: 0}
+  player1Dead: 0
 --- !u!114 &21808633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5117,7 +5119,7 @@ Transform:
   - {fileID: 1672341953}
   - {fileID: 1566904519}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &273386326
 GameObject:
@@ -5229,6 +5231,51 @@ Transform:
   m_Father: {fileID: 21808630}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &292507216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 292507218}
+  - component: {fileID: 292507217}
+  m_Layer: 0
+  m_Name: Who wins? 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &292507217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292507216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e1b9874965441fda4b43d9e64dc879, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player1: 0
+  player2Win: {fileID: 0}
+--- !u!4 &292507218
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292507216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &297050734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5274,7 +5321,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 4a9924d0a517daf1888f54fa567f81c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4a9924d0a517daf1888f54fa567f81c9,
         type: 3}
@@ -6588,7 +6635,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &515613353
 MonoBehaviour:
@@ -6755,9 +6802,11 @@ MonoBehaviour:
   shieldOn: 0
   isDead: 0
   slowmotion: {fileID: 515613351}
-  timer: 2
-  timer2: 2
-  whoWins: {fileID: 2115689869}
+  timer: 0.5
+  timer2: 1
+  whoWins: {fileID: 601196424}
+  whoWins2: {fileID: 292507216}
+  player1Dead: 0
 --- !u!114 &552083111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8649,7 +8698,7 @@ Transform:
   m_Children:
   - {fileID: 1806731881}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &933822072
 Animator:
@@ -9228,7 +9277,7 @@ Transform:
   m_LocalScale: {x: 27.048462, y: 38.411404, z: 11.496028}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1018969942
 Rigidbody:
@@ -10666,7 +10715,7 @@ Transform:
   m_LocalScale: {x: 127.98852, y: 1, z: 20.696466}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1104982353
 GameObject:
@@ -14463,7 +14512,7 @@ Transform:
   m_Children:
   - {fileID: 1220981465}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1150663100
 MonoBehaviour:
@@ -14472,19 +14521,21 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150663098}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6095fd20c2b644b15bbae24998a03d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  maxHealth: 0
+  maxHealth: 100
   shieldOn: 0
   isDead: 0
   slowmotion: {fileID: 515613351}
-  timer: 2
-  timer2: 2
-  whoWins: {fileID: 2115689869}
+  timer: 0.5
+  timer2: 1
+  whoWins: {fileID: 1556942659}
+  whoWins2: {fileID: 292507216}
+  player2Dead: 0
 --- !u!1 &1150704967
 GameObject:
   m_ObjectHideFlags: 0
@@ -15359,7 +15410,7 @@ Transform:
   - {fileID: 237404510}
   - {fileID: 767708133}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1346794123
 Rigidbody:
@@ -19206,11 +19257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92e1b9874965441fda4b43d9e64dc879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Health: 0
-  player2Health: 0
-  player1Wins: {fileID: 1556942659}
-  player2Wins: {fileID: 601196424}
-  time: 0.5
+  player1: 0
+  player2Win: {fileID: 601196424}
 --- !u!4 &2115689871
 Transform:
   m_ObjectHideFlags: 0

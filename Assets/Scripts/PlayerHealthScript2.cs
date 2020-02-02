@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealthScript2 : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class PlayerHealthScript2 : MonoBehaviour
     public float timer;
     public float timer2;
     public GameObject whoWins;
+    public GameObject whoWins2;
+
+
+    public bool player2Dead = false;
     // Start is called before the first frame update
 
 
@@ -60,11 +65,11 @@ public class PlayerHealthScript2 : MonoBehaviour
         {
             if (shieldOn == true)
             {
-                DamagePlayer1PunchReduced();
+                DamagePlayer2PunchReduced();
             }
             else
             {
-                DamagePlayer1Punch();
+                DamagePlayer2Punch();
             }
 
         }
@@ -75,11 +80,11 @@ public class PlayerHealthScript2 : MonoBehaviour
         {
             if (shieldOn == true)
             {
-                DamagePlayer1MissleReduced();
+                DamagePlayer2MissleReduced();
             }
             else
             {
-                DamagePlayer1Missle();
+                DamagePlayer2Missle();
             }
 
         }
@@ -89,7 +94,7 @@ public class PlayerHealthScript2 : MonoBehaviour
 
     //Punch Damages
 
-    public void DamagePlayer1Punch()
+    public void DamagePlayer2Punch()
     {
         currentHealth = currentHealth - 10;
 
@@ -106,7 +111,7 @@ public class PlayerHealthScript2 : MonoBehaviour
 
 
 
-    public void DamagePlayer1PunchReduced()
+    public void DamagePlayer2PunchReduced()
     {
         currentHealth = currentHealth - 2;
 
@@ -123,7 +128,7 @@ public class PlayerHealthScript2 : MonoBehaviour
 
     //Missle Damages
 
-    public void DamagePlayer1Missle()
+    public void DamagePlayer2Missle()
     {
         currentHealth = currentHealth - 20;
 
@@ -140,7 +145,7 @@ public class PlayerHealthScript2 : MonoBehaviour
 
 
 
-    public void DamagePlayer1MissleReduced()
+    public void DamagePlayer2MissleReduced()
     {
         currentHealth = currentHealth - 4;
 
@@ -157,6 +162,7 @@ public class PlayerHealthScript2 : MonoBehaviour
 
 
 
+
     public void SlowmotionTimer()
     {
         StartCoroutine(timerr());
@@ -166,9 +172,14 @@ public class PlayerHealthScript2 : MonoBehaviour
     {
         slowmotion.SetActive(true);
         yield return new WaitForSeconds(timer);
-        slowmotion.SetActive(false);
+        
         isDead = false;
+        player2Dead = true;
         yield return new WaitForSeconds(timer2);
         whoWins.SetActive(true);
+        //whoWins.SetActive(true);
+        //whoWins2.SetActive(true);
+        yield return new WaitForSeconds(timer);
+        SceneManager.LoadScene("MenuScene");
     }
 }
