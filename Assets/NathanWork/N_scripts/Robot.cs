@@ -8,9 +8,12 @@ public class Robot : MonoBehaviour
     public Animator chickenAnimator;
 
     private int health;
-    private RobotAttack robotAttack;
+    [HideInInspector] public RobotAttack robotAttack;
     public bool isBlocking = false;
+    public bool canWalk = true;
     public float speed = 1.5f;
+    private float inputH;
+
 
     void Start()
     {
@@ -35,9 +38,13 @@ public class Robot : MonoBehaviour
         //float inputH = Input.GetAxis("Horizontal");
         float inputH = gamepad.rightStick.x.ReadValue();
 
-        if (!isBlocking)
+        if (!isBlocking && canWalk)
         {
+            inputH = Input.GetAxis("Horizontal");
             gameObject.transform.position = new Vector2(transform.position.x + (inputH * speed * Time.deltaTime), transform.position.y);
+        } else
+        {
+            inputH = 0;
         }
 
         if (inputH != 0)

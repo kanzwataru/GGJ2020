@@ -2,6 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum RoomType
+{
+    heal,
+    walk,
+    ammo,
+    punch,
+    block,
+    rockets
+}
+
 public class Room : MonoBehaviour
 {
     [HideInInspector] public BoxCollider roomCollider;
@@ -13,6 +23,7 @@ public class Room : MonoBehaviour
     private GameObject repairGame;
     private bool inRoom = false;
     public bool roomHit = false;
+    public RoomType roomType;
 
     private void Start()
     {
@@ -34,6 +45,35 @@ public class Room : MonoBehaviour
             roomHit = false;
             sparkMachine.SetBool("sparking", false);
             explosionMachine.SetBool("exploding", false);
+
+            switch (roomType)
+            {
+                case RoomType.heal:
+                    print("healing fixed");
+                    break;
+                case RoomType.walk:
+                    print("walking fixed");
+
+                    break;
+                case RoomType.ammo:
+                    print("ammo fixed");
+
+                    break;
+                case RoomType.punch:
+                    print("punch fixed");
+                    GameLogic.punchRoom.Invoke(true);
+
+                    break;
+                case RoomType.block:
+                    print("block fixed");
+
+                    break;
+                case RoomType.rockets:
+                    print("rockets fixed");
+
+                    break;
+           }
+
         }
     }
 

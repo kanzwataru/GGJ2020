@@ -12,16 +12,23 @@ public class RobotAttack : MonoBehaviour
     public Animator robotAnimator;
 
     public RoomManager roomManager;
-    [HideInInspector] public bool canAttack = true;
+    public bool canAttack = true;
+    public bool canPunch = true;
     private int numberOfRooms;
     private int currentTarget = 0;
+
 
     void Start()
     {
         robotAnimator = robotAnimator.GetComponent<Animator>();
         roomManager = roomManager.GetComponent<RoomManager>();
         numberOfRooms = roomManager.rooms.Length;
-        canAttack = true;
+        //GameLogic.punchRoom.AddListener(punchState);
+    }
+
+    void punchState(bool isFixed)
+    {
+        canPunch = isFixed;
     }
 
     void Update()
@@ -70,6 +77,37 @@ public class RobotAttack : MonoBehaviour
             roomManager.rooms[currentTarget].sparkMachine.SetBool("sparking", true);
             roomManager.rooms[currentTarget].explosionMachine.SetTrigger("explode");
             roomManager.rooms[currentTarget].explosionMachine.SetBool("exploding", true);
+
+            //problems
+            switch (roomManager.rooms[currentTarget].roomType)
+            {
+                case RoomType.heal:
+                    print("healing broken");
+                    break;
+                case RoomType.walk:
+                    print("walking broken");
+                    //robot.canWalk = true; //get enemy robot
+                    //signal dispatch
+                    //enemy robot hit
+                    break;
+                case RoomType.ammo:
+                    print("ammo broken");
+
+                    break;
+                case RoomType.punch:
+                    print("punch broken");
+                    //robot.robotAttack.canAttack = true;
+                    //GameLogic.punchRoom.Invoke();
+                    break;
+                case RoomType.block:
+                    print("block broken");
+
+                    break;
+                case RoomType.rockets:
+                    print("rockets broken");
+
+                    break;
+            }
         }
     }
 }
