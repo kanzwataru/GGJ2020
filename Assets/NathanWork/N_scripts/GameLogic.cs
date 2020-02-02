@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameLogic : MonoBehaviour
 {
@@ -25,5 +26,8 @@ public class GameLogic : MonoBehaviour
 
     public static int punchDamage = 3;
     public static int health = 10;
+
+    public static UnityEvent<bool> punchRoom;
+    public static UnityEvent healRoom;
 
 }
