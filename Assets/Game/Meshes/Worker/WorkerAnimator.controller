@@ -271,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frameRate: 12
   persistFrames: 0
+  ignoreScale: 1
   animationPrefab: {fileID: -927199367670048503, guid: 9664b0b337d3789459a88c1080777b69,
     type: 3}
   resetFrameOnEnter: 1
@@ -421,6 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frameRate: 12
   persistFrames: 0
+  ignoreScale: 1
   animationPrefab: {fileID: -927199367670048503, guid: 724b6f45bccb9c946992657b64ee01ad,
     type: 3}
   resetFrameOnEnter: 1
@@ -468,6 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frameRate: 12
   persistFrames: 0
+  ignoreScale: 1
   animationPrefab: {fileID: -927199367670048503, guid: e97448aa280a3ce44ac24e3125ba8e0b,
     type: 3}
   resetFrameOnEnter: 1
@@ -485,6 +488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frameRate: 12
   persistFrames: 0
+  ignoreScale: 1
   animationPrefab: {fileID: -927199367670048503, guid: c5ee3dfbe3ed7ad4dbd5a53acc19f399,
     type: 3}
   resetFrameOnEnter: 1
