@@ -397,6 +397,7 @@ MonoBehaviour:
   robotAnimator: {fileID: 5906270233617327401}
   roomManager: {fileID: 0}
   canAttack: 1
+  canPunch: 1
 --- !u!114 &4283233949345730118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,7 +412,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxCollider: {fileID: 0}
   chickenAnimator: {fileID: 4283233948173109789}
+  robotAttack: {fileID: 0}
   isBlocking: 0
+  canWalk: 1
   speed: 3
 --- !u!1 &5124765303326709431
 GameObject:

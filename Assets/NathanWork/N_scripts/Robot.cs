@@ -40,7 +40,7 @@ public class Robot : MonoBehaviour
 
         if (!isBlocking && canWalk)
         {
-            inputH = Input.GetAxis("Horizontal");
+            inputH = gamepad.rightStick.x.ReadValue();
             gameObject.transform.position = new Vector2(transform.position.x + (inputH * speed * Time.deltaTime), transform.position.y);
         } else
         {
