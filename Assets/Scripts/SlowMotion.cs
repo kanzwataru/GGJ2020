@@ -11,18 +11,14 @@ public class SlowMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-
             if (Time.timeScale == 1.0f)
                 Time.timeScale = 0.3f;
 
             else
 
                 Time.timeScale = 1.0f;
-            Time.fixedDeltaTime = 0.02f * Time.timeScale;
-        }
+            Time.fixedDeltaTime = 0.05f * Time.timeScale;
+        
 
 
         if (Time.timeScale == 0.03f)

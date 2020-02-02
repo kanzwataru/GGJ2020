@@ -6,6 +6,7 @@ public class ActivateButton : MonoBehaviour
 {
     public GameObject button;
     public float time;
+    public GameObject logoAppear;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,8 @@ public class ActivateButton : MonoBehaviour
 
     IEnumerator Timer()
     {
+        yield return new WaitForSeconds(time);
+        logoAppear.SetActive(true);
         yield return new WaitForSeconds(time);
         button.SetActive(true);
     }

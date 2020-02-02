@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealthScript : MonoBehaviour
+public class PlayerHealthScript2 : MonoBehaviour
 {
-    public static PlayerHealthScript instance;
+    public static PlayerHealthScript2 instance;
 
     public int currentHealth;
     public int maxHealth;
@@ -22,16 +22,16 @@ public class PlayerHealthScript : MonoBehaviour
     public void Awake()
     {
         instance = this;
-        
+
     }
     void Start()
     {
         currentHealth = maxHealth;
         shieldOn = false;
 
-        UIHealth.instance.healthSlider.maxValue = maxHealth;
-        UIHealth.instance.healthSlider.value = currentHealth;
-        UIHealth.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIHealth2.instance.healthSlider.maxValue = maxHealth;
+        UIHealth2.instance.healthSlider.value = currentHealth;
+        UIHealth2.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
     // Update is called once per frame
@@ -42,21 +42,21 @@ public class PlayerHealthScript : MonoBehaviour
             SlowmotionTimer();
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.B))
         {
             Debug.Log("shieldOn");
             shieldOn = true;
 
         }
 
-        if (Input.GetKeyUp(KeyCode.G))
+        if (Input.GetKeyUp(KeyCode.B))
         {
             Debug.Log("shieldOff");
             shieldOn = false;
         }
 
         //Receive Punch
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.N))
         {
             if (shieldOn == true)
             {
@@ -64,14 +64,14 @@ public class PlayerHealthScript : MonoBehaviour
             }
             else
             {
-                DamagePlayer1Punch();   
+                DamagePlayer1Punch();
             }
 
         }
 
         //Receive Missle
 
-        if (Input.GetKeyDown(KeyCode.U))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             if (shieldOn == true)
             {
@@ -84,7 +84,7 @@ public class PlayerHealthScript : MonoBehaviour
 
         }
 
-        
+
     }
 
     //Punch Damages
@@ -97,11 +97,11 @@ public class PlayerHealthScript : MonoBehaviour
         {
             Debug.Log("Dead");
             isDead = true;
-         
+
         }
 
-        UIHealth.instance.healthSlider.value = currentHealth;
-        UIHealth.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIHealth2.instance.healthSlider.value = currentHealth;
+        UIHealth2.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
 
@@ -110,15 +110,15 @@ public class PlayerHealthScript : MonoBehaviour
     {
         currentHealth = currentHealth - 2;
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Debug.Log("Dead");
             isDead = true;
-       
+
         }
 
-        UIHealth.instance.healthSlider.value = currentHealth;
-        UIHealth.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIHealth2.instance.healthSlider.value = currentHealth;
+        UIHealth2.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
     //Missle Damages
@@ -134,8 +134,8 @@ public class PlayerHealthScript : MonoBehaviour
 
         }
 
-        UIHealth.instance.healthSlider.value = currentHealth;
-        UIHealth.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIHealth2.instance.healthSlider.value = currentHealth;
+        UIHealth2.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
 
@@ -151,8 +151,8 @@ public class PlayerHealthScript : MonoBehaviour
 
         }
 
-        UIHealth.instance.healthSlider.value = currentHealth;
-        UIHealth.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
+        UIHealth2.instance.healthSlider.value = currentHealth;
+        UIHealth2.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
 
 
@@ -170,6 +170,5 @@ public class PlayerHealthScript : MonoBehaviour
         isDead = false;
         yield return new WaitForSeconds(timer2);
         whoWins.SetActive(true);
-
     }
 }
