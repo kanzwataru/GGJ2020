@@ -10,6 +10,8 @@ public class PlayerHealthScript : MonoBehaviour
     public int maxHealth;
 
     public bool shieldOn;
+
+    public bool isDead;
     // Start is called before the first frame update
 
 
@@ -53,7 +55,7 @@ public class PlayerHealthScript : MonoBehaviour
             }
             else
             {
-                DamagePlayer1Punch();
+                DamagePlayer1Punch();   
             }
 
         }
@@ -72,6 +74,11 @@ public class PlayerHealthScript : MonoBehaviour
             }
 
         }
+
+        if(isDead == true)
+        {
+            //SlowMotion
+        }
     }
 
     //Punch Damages
@@ -83,6 +90,7 @@ public class PlayerHealthScript : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Dead");
+            isDead = true;
         }
 
         UIHealth.instance.healthSlider.value = currentHealth;
@@ -98,6 +106,7 @@ public class PlayerHealthScript : MonoBehaviour
         if(currentHealth <= 0)
         {
             Debug.Log("Dead");
+            isDead = true;
         }
 
         UIHealth.instance.healthSlider.value = currentHealth;
@@ -113,6 +122,7 @@ public class PlayerHealthScript : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Dead");
+            isDead = true;
         }
 
         UIHealth.instance.healthSlider.value = currentHealth;
@@ -128,6 +138,7 @@ public class PlayerHealthScript : MonoBehaviour
         if (currentHealth <= 0)
         {
             Debug.Log("Dead");
+            isDead = true;
         }
 
         UIHealth.instance.healthSlider.value = currentHealth;
