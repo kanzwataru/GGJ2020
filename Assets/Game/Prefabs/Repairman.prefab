@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 5267168141889806501}
   - component: {fileID: 7187981130810437181}
   - component: {fileID: 5679830096630764438}
-  - component: {fileID: 950120862511722981}
   m_Layer: 0
   m_Name: Repairman
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,19 +85,6 @@ MonoBehaviour:
   jumpTimerLength: 0.15
   gravity: 0.9
   stopDist: 0.1
---- !u!114 &950120862511722981
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2196839336181967098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 864efd1eb08a28603ac12a445e218e55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visuals: {fileID: 8351736129714334268}
 --- !u!1 &5652931181793917425
 GameObject:
   m_ObjectHideFlags: 0

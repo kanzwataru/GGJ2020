@@ -32,7 +32,7 @@ public class RobotAttack : MonoBehaviour
         }
 
         //change target
-        if (Input.GetKeyDown("a"))
+        if (Input.GetKeyDown("x"))
         {
             roomManager.rooms[currentTarget].target.enabled = false;
             currentTarget = (currentTarget + 1) % numberOfRooms;
@@ -52,7 +52,7 @@ public class RobotAttack : MonoBehaviour
         }
 
         //fire missile
-        if (Input.GetKeyDown("s"))
+        if (Input.GetKeyDown("c"))
         {
             //check if missile silo is full
             //start a cooldown
