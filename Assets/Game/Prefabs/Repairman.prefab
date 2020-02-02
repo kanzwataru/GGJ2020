@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 7187981130810437181}
   - component: {fileID: 5679830096630764438}
   - component: {fileID: 272709585313714063}
-  - component: {fileID: 1926797954}
   - component: {fileID: 1926797959}
+  - component: {fileID: 5245298676740671547}
   m_Layer: 2
   m_Name: Repairman
   m_TagString: Untagged
@@ -101,20 +101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visuals: {fileID: 8351736129714334268}
---- !u!114 &1926797954
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2196839336181967098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebff17a9c578ce611823f987c824ce19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  moveOffTimer: 0.5
 --- !u!114 &1926797959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   facingDir: 0
+--- !u!114 &5245298676740671547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196839336181967098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7070f737514eb93c8179dc72bdb0a7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
 --- !u!1 &5652931181793917425
 GameObject:
   m_ObjectHideFlags: 0

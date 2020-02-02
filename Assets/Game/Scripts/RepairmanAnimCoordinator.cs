@@ -8,7 +8,7 @@ public class RepairmanAnimCoordinator : MonoBehaviour
 
     RepairmanInput rinput;
     RepairmanMotor motor;
-    LadderMovement ladderMove;
+    BetterLadderMovement ladderMove;
     Animator       animator;
 
     float lastXPos;
@@ -17,7 +17,7 @@ public class RepairmanAnimCoordinator : MonoBehaviour
     void Start()
     {
         motor = GetComponent<RepairmanMotor>();
-        ladderMove = GetComponent<LadderMovement>();
+        ladderMove = GetComponent<BetterLadderMovement>();
         animator = visuals.GetComponent<Animator>();
         rinput = GetComponent<RepairmanInput>();
 
