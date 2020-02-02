@@ -77,6 +77,7 @@ public class LadderMovement : MonoBehaviour
         pos.y += dir.y * moveSpeed * Time.deltaTime;
 
         if(dir.x != 0) {
+            if(!currentTrigger || (currentTrigger && !currentTrigger.throughFloor))
             StopClimb();
         }
 
