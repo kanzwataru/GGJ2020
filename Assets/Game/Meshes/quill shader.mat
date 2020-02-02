@@ -8,8 +8,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: quill shader
-  m_Shader: {fileID: 4800000, guid: cb516928bcdcfaf8789944e62672c02a, type: 3}
-  m_ShaderKeywords: _ENABLETRANSPARENCY_ON
+  m_Shader: {fileID: 4800000, guid: a4811581531ce6441960bf8f333ab5e7, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -62,7 +62,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EnableFog: 0
-    - _EnableTransparency: 1
+    - _EnableTransparency: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
