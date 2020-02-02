@@ -31,7 +31,10 @@ public class MechHealthScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            DamagePlayer2();
+            
+            {
+                DamagePlayer2();
+            }
         }
     }
 
@@ -50,4 +53,11 @@ public class MechHealthScript : MonoBehaviour
         UIMechHealth.instance.healthSlide.value = currentHealth;
         UIMechHealth.instance.healthText.text = currentHealth.ToString() + " / " + maxHealth.ToString();
     }
+
+    
+        
+
+
+
+
 }
