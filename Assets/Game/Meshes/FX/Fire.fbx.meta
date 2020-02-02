@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: aaa7623e18608804fb74c784742e8ab0
+guid: 73277ce827bb24e4699d58000c6138f0
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: 1827226128182048838
-    second: Take 001
+      74: 3928244756152794525
+    second: anim_stack
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Double Sided Material1
+      name: Single Sided Material
     second: {fileID: 2100000, guid: eb34a82ff377d6149800c5a62f1d2ba4, type: 2}
   materials:
     materialImportMode: 1
