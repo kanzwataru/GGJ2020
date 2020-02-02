@@ -30,6 +30,14 @@ public class RepairmanMotor : MonoBehaviour
         inertia = Vector3.zero;
     }
 
+    public bool IsRunning() {
+        return dir.x != 0;
+    }
+
+    public bool IsJumping() {
+        return inertia.y > 0;
+    }
+
     public void Enable(bool value) {
         if(enabled != value)
             ResetInertia();
