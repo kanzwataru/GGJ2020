@@ -1,17 +1,12 @@
 fileFormatVersion: 2
-guid: 4a9924d0a517daf1888f54fa567f81c9
+guid: 7670c80774aabf54eb9f9a98abaa9628
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: 7130598552778831252
-    second: ChickenJump_start
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Wataru_vertexColour_Wataru_vertexColour_newnew
-    second: {fileID: 2100000, guid: eb34a82ff377d6149800c5a62f1d2ba4, type: 2}
+      74: -1178489990750940326
+    second: BlockExit
+  externalObjects: {}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -75,17 +70,8 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - a1aed0a4bd94c5344bc6b64e9e66fbd2
-  - 7670c80774aabf54eb9f9a98abaa9628
-  - 3cdbee81a1c798044ba02ab907787f23
-  - ad3df5a7af7c7e140b796aa1c6caac11
-  - 9194de24e79a81241ba4adb6adaa5fa9
-  - e83403da5347e5941a665d7305841d78
-  - a46b0f38353832a4dac7aea56bb2be99
-  - 865780588d0df8542b705ae4faa5a16b
-  - 906df3820d12c2b419709285f25c7707
-  importAnimation: 0
+  referencedClips: []
+  importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
@@ -97,7 +83,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 100
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
