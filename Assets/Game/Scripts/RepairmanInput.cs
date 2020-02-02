@@ -5,7 +5,7 @@ using UnityEngine;
 public class RepairmanInput : MonoBehaviour
 {
     RepairmanMotor motor;
-    LadderMovement ladderMove;
+    BetterLadderMovement ladderMove;
 
     public int facingDir = 1;
 
@@ -13,7 +13,7 @@ public class RepairmanInput : MonoBehaviour
     void Start()
     {
         motor = GetComponent<RepairmanMotor>();
-        ladderMove = GetComponent<LadderMovement>();
+        ladderMove = GetComponent<BetterLadderMovement>();
     }
 
     // Update is called once per frame
